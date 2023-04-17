@@ -4,26 +4,42 @@ const { NotImplementedError } = require('../extensions/index.js');
  * Implement chainMaker object according to task description
  * 
  */
-const chainMaker = {
+ const chainMaker ={
+  arr: [],
+
   getLength() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  return this.arr.length;
   },
-  addLink(/* value */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  addLink(value = ' ') {
+    this.arr.push(value);
+    return this
   },
-  removeLink(/* position */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  removeLink(position) {
+    if (!!(position % 1) || (position < 1) || (position > this.arr.length) ||isNaN(position)) {
+      this.arr = [];
+      throw new Error("You can't remove incorrect link!")
+    }
+    if(position){
+      this.arr.splice(position - 1, 1);
+      return this
+    }else{
+      this.arr.pop();
+      return this
+    }
+
   },
   reverseChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    this.arr.reverse();
+    return this
+
   },
   finishChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    for(let i=0; i<this.arr.length; i++){
+      this.arr[i] = `( ${this.arr[i]} )`;
+    }
+    let str =this.arr.join('~~');
+    this.arr = [];
+    return str
   }
 };
 
