@@ -94,7 +94,7 @@ class VigenereCipheringMachine {
   }
 
 
-  return start.join('')
+  return this.direct ? start.join('') : start.reverse().join('');
 }
 
   decrypt(value, kod) {
@@ -173,7 +173,7 @@ for(let i=0; i < start.length; i++ ){
 }
 
 
-return start.join('')
+return this.direct ? start.join('') : start.reverse().join('');
   }
 }
 
