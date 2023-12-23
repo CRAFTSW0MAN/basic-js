@@ -27,7 +27,6 @@ function getCommonCharacterCount(s1, s2) {
     if (arrStr.includes(str1[i])) {
       count++;
       arrStr.splice(arrStr.indexOf(str1[i]), 1);
-      console.log(str1, arrStr);
     }
   }
   return count;
