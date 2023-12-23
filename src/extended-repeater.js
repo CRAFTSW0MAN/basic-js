@@ -45,49 +45,8 @@ function repeater( str, options) {
       result = result + y.repeat(repeatTimes-1)
   }
   return result;
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
 }
-// function repeater(str, options) {
-//   let str2 = str;
-//   let separator = options.separator || '+';
-//   let repeatTimes = options.repeatTimes || 1;
-//   let additionSeparator = options.additionSeparator || '|';
-//   let additionRepeatTimes = options.additionRepeatTimes || 1;
-//   let addition = options.addition !== undefined ? String(options.addition) : '';
-//   let result = ''
 
-//   if(repeatTimes <= 1){
-//     result += str2;
-//     if (addition !== 0 && additionRepeatTimes <= 1){
-//       result += addition;
-//     }else if(addition !== 0 && additionRepeatTimes > 1){
-//       let g = addition+additionSeparator;
-//       for (let i=0; i <= additionRepeatTimes; i++){
-//         result += g
-//       }
-//     }
-//   }else if(repeatTimes > 1){
-//     result += str2;
-//     if (addition !== 0 && additionRepeatTimes <= 1){
-//       result += addition;
-//     }else if(addition !== 0 && additionRepeatTimes > 1){
-//       //! этот for для формирования addition+addition_selector-последнее повторение
-//       for (let i =1; i <= additionRepeatTimes; i++){
-//         if (i === additionRepeatTimes) {
-//           result += addition;
-//         }else {
-//           result += addition+additionSeparator;
-//         }
-//       }
-//     }
-//     let y = separator +result
-//     for (let i=2; i <= repeatTimes; i++){
-//       result += y
-//     }
-//   }
-//   return result;
-// }
 
 module.exports = {
   repeater
